@@ -2,17 +2,19 @@ Attribute VB_Name = "AgendaModule"
 'This module contains procedures shared between the Agenda and Reader programs.
 Option Explicit
 
+'This structure defines the message.
 Private Type MessageStr
-   Password As String
-   Message As String
+   Password As String   'Defines the optional password for the message.
+   Message As String    'Defines the message's text.
 End Type
 
+'This structure defines the program's settings.
 Public Type SettingsStr
-   UsePassword As Boolean
-   NoMessageNotification As Boolean
+   UsePassword As Boolean             'Indicates whether to use a password for the message.
+   NoMessageNotification As Boolean   'Indicates whether to notify the user when there is no message.
 End Type
 
-Public Settings As SettingsStr
+Public Settings As SettingsStr   'Contains the program's settings.
 
 'This procedure encrypts/decrypts the specified text and returns the result.
 Public Function Crypt(Text As String) As String
